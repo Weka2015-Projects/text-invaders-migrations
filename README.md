@@ -1,67 +1,34 @@
 # text-invaders-migrations
 
+Database works 
 
-Through dark sunken eyes
-I see another pale sunrise
-surrounded by soldiers
-glued to the screens
-hold back the invaders
-their infernal machines.
+ Schema |      Name       | Type  | Owner
+--------+-----------------+-------+-------
+ public | games           | table | nkula
+ public | knex_migrations | table | nkula
+ public | players         | table | nkula
+ public | plays           | table | nkula
+ 
+ text_invaders_dev=# SELECT * FROM players
+ 
+ id |  name   | high_score |         created_at         |         updated_at
+----+---------+------------+----------------------------+----------------------------
+  7 | katie   |          0 | 2016-01-28 04:35:28.869+00 | 2016-01-28 04:35:28.869+00
+  8 | jason   |          5 | 2016-01-28 04:35:28.869+00 | 2016-01-28 04:35:28.869+00
+  9 | charles |         10 | 2016-01-28 04:35:28.869+00 | 2016-01-28 04:35:28.869+00
+  
+text_invaders_dev=# select * FROM games
 
-We fight to survive
-running to stay alive
-our bodies aching and tired
-there's no where to hide
-our covers' been blown away
+ id |                     content                      |         created_at         |         updated_at
+----+--------------------------------------------------+----------------------------+----------------------------
+  7 | the square is a bottle, otherwise it is a circle | 2016-01-28 04:35:28.801+00 | 2016-01-28 04:35:28.801+00
+  8 | if (x == 0) return false                         | 2016-01-28 04:35:28.801+00 | 2016-01-28 04:35:28.801+00
+  9 | this aint a scene, its an arms race              | 2016-01-28 04:35:28.801+00 | 2016-01-28 04:35:28.801+00
+  
+text_invaders_dev=# SELECT * FROM plays;
 
-Space Invaders
-Space Invaders
-Space Invaders
-
-They're closing in on me
-dark forces cold and unseen
-Oh my hip pocket nerve is aching again
-I must go back in and fight it out to the end
-
-Space Invaders
-
-Space Invaders
-
-Space Invaders
-
-(musical interlude, more space invader sound effects)
-
-They're closing in on me
-dark forces cold and unseen
-
-Oh my hip pocket nerve is aching again
-I must go back in and fight it out the end.
-
-We fight to survive
-running to stay alive
-our bodies aching and tired
-there's no where to hide
-our covers been blown away
-
-
-Space Invaders
-Space Invaders
-Space Invaders
-
-We fight to survive
-Space Invaders
-running just to stay alive
-Space Invaders
-oooh oooh ooohh hooo
-
-Space Invaders
-
-Space Invadrs
-
-Space Invaders
-
-oooh hoo hoo hoo
-
-Space Invaders
-
-Space Invaders (fade)
+ id | player_id | game_id | score |         created_at         |         updated_at
+----+-----------+---------+-------+----------------------------+----------------------------
+  1 |         7 |       7 |     0 | 2016-01-28 04:35:28.885+00 | 2016-01-28 04:35:28.885+00
+  2 |         8 |       8 |     0 | 2016-01-28 04:35:28.885+00 | 2016-01-28 04:35:28.885+00
+  3 |         9 |       9 |     0 | 2016-01-28 04:35:28.885+00 | 2016-01-28 04:35:28.885+00
