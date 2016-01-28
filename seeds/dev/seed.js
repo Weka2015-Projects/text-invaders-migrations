@@ -22,6 +22,7 @@ exports.seed = function(knex, Promise) {
     updated_at: new Date()
   }], 'id'))
   .then(function(data) {
+    console.log(data)
     gameIds = data[data.length-1]
     return knex('players').insert([
     {
@@ -42,9 +43,10 @@ exports.seed = function(knex, Promise) {
       created_at: new Date(),
       updated_at: new Date()
     }
-    ], 'id')
+    ], ['id', 'name'])
   }) 
    .then(function(data) {
+    console.log(data)
     playerIds = data
     playsData = [ {
       score: 0,
@@ -62,10 +64,10 @@ exports.seed = function(knex, Promise) {
       updated_at: new Date()
     }]
     playsData.map(function (data, index) {
-      data.player_id = playerIds[index]
-      data.game_id = gameIds[index]
+      data.player_id = playerIds[index].id
+      data.game_id = gameIds[index].id
+      data.name = playerIds[index].name
     })
-    console.log(playsData)
     return knex('plays').insert(playsData)
   })
  }
