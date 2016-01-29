@@ -65,7 +65,7 @@ exports.seed = function(knex, Promise) {
     }]
     playsData.map(function (data, index) {
       data.player_id = playerIds[index].id
-      data.game_id = gameIds[index].id
+      data.game_id = gameIds[index]
       data.name = playerIds[index].name
     })
     return knex('plays').insert(playsData)
